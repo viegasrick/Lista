@@ -1,0 +1,118 @@
+/* Estilos gerais para a página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Garante que a página ocupe pelo menos toda a altura da tela */
+  }
+  
+  /* Estilos para o cabeçalho */
+  header {
+    background-color: #000000;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+  }
+  
+  header h1 {
+    margin: 0;
+    color: #ffffff;
+  }
+  
+  /* Estilos para o contêiner de tarefas */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Define uma largura máxima para evitar que o conteúdo fique muito largo em telas grandes */
+    margin: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos para as tarefas */
+  .task {
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #ff69b4;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .task:hover {
+    background-color: rgba(117, 116, 116, 0.2);
+  }
+  
+  .task input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  /* Estilos para tarefas concluídas */
+  .task input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+  }
+  
+  /* Remover a marcação de lista (bullets) */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+/* Tornar a caixa de seleção invisível */
+.task input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    width: 20px; /* Largura da caixa de seleção (ajuste conforme necessário) */
+    height: 20px; /* Altura da caixa de seleção (ajuste conforme necessário) */
+    cursor: pointer;
+  }
+  
+  /* Estilos para o rótulo (label) */
+  .task label {
+    position: relative;
+    padding-left: 30px; /* Espaço para uma marca de seleção personalizada (ajuste conforme necessário) */
+    cursor: pointer;
+  }
+  /* Desabilitar a seleção de texto */
+.task {
+    -webkit-user-select: none; /* Para navegadores baseados em Webkit (Chrome, Safari, etc.) */
+    -moz-user-select: none; /* Para navegadores baseados em Mozilla (Firefox, etc.) */
+    -ms-user-select: none; /* Para navegadores baseados em Microsoft (Edge, IE) */
+    user-select: none; /* Padrão, para outros navegadores */
+  }
+  
+  
+  /* Marca de seleção personalizada (pode usar um ícone personalizado) */
+  .task label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px; /* Largura da marca de seleção (ajuste conforme necessário) */
+    height: 20px; /* Altura da marca de seleção (ajuste conforme necessário) */
+    border: 1px solid #ff69b4;
+    background-color: transparent;
+  }
+  
+  /* Quando a tarefa está marcada como concluída */
+  .task input[type="checkbox"]:checked + label::before {
+    background-color: #ff69b4; /* Cor de fundo da marca de seleção quando marcada como concluída */
+  }
+  
+  
+  
+  /* Media query para telas menores (exemplo: celulares) */
+  @media (max-width: 768px) {
+    .container {
+      margin: 10px;
+    }
+  }
+  
